@@ -1,7 +1,8 @@
 import { Nav } from '@/components/Nav'
 import { TourCard } from '@/components/TourCard'
+import { CarouselSpacing } from '../components/TestCarousel'
 import { container } from '../styles'
-import { cnMerge } from '../styles/cnMerge'
+import { cn } from '../lib/utils'
 import Image from 'next/image'
 import Footer from '../components/Footer'
 import { HandHeart } from '../components/icons/hand-heart'
@@ -23,17 +24,22 @@ const Home = () => {
       <main className="z-10 relative">
         {/* Hero Section */}
         <section
-          className={cnMerge(
+          className={cn(
             'relative md:pt-32 pt-10 text-white min-h-screen',
             container,
           )}
         >
-          <h1 className="text-xl md:text-3xl font-bold text-left text-white">
-            EXPLORE THE WORLD <br />
-            <span className="text-3xl md:text-8xl text-[#DAFAFD]">
-              SUSTAINABLY
+          <div className={'relative'}>
+            <h1 className="text-xl md:text-3xl font-bold text-left text-white">
+              EXPLORE THE WORLD <br />
+              <span className="text-3xl md:text-8xl text-[#DAFAFD]">
+                SUSTAINABLY
+              </span>
+            </h1>
+            <span className="font-bold text-left text-3xl md:text-8xl text-[#DAFAFD] opacity-10 transform -scale-y-100 absolute sr-hidden">
+              <span className={'relative top-3'}>SUSTAINABLY</span>
             </span>
-          </h1>
+          </div>
           <p className="mt-4 max-w-2xl text-lg">
             Embark on unforgettable journeys that respect the planet and support
             local communities. Whether you seek thrilling adventures or serene
@@ -47,7 +53,7 @@ const Home = () => {
         </section>
         {/* Tour Package */}
         <section
-          className={cnMerge(
+          className={cn(
             'flex flex-col items-center justify-center pt-10 pb-32',
             container,
           )}
@@ -55,7 +61,7 @@ const Home = () => {
           <h2 className="text-3xl font-bold text-black text-center font-header">
             Tour Packages
           </h2>
-          <p className="text-center text-gray-400 mt-5 max-w-2xl">
+          <p className="text-center text-gray-400 mt-5 max-w-xl">
             Discover our diverse range of eco-friendly adventures across the
             world crafted for the environmentally conscious traveller
           </p>
@@ -137,7 +143,23 @@ const Home = () => {
             </div>
           </div>
         </section>
-        <section className={'bg-[#FAFFFF] w-full min-h-[250px]'}></section>
+        <section className={'bg-[#FAFFFF] w-full py-36'}>
+          <div
+            className={cn(
+              'flex flex-col items-center justify-center',
+              container,
+            )}
+          >
+            <h2 className="text-3xl font-bold text-black text-center font-header">
+              What Our Travellers Say
+            </h2>
+            <p className="text-center text-gray-400 mt-5 max-w-xl mb-14">
+              Read testimonials from our travellers who have experienced the
+              magic and impact of our eco-tours
+            </p>
+            <CarouselSpacing />
+          </div>
+        </section>
       </main>
       <Footer />
     </div>

@@ -11,8 +11,8 @@ export const Nav = () => {
     <nav className="max-w-7xl mx-auto">
       <div className="flex items-center justify-between p-4 z-10 w-full relative">
         <div className="flex items-center">
-          <EvLogo width={28} />
-          <span className="ml-2 text-white font-medium">
+          <EvLogo className={'w-7 fill-white'} />
+          <span className="ml-1 text-white font-medium">
             Eco<span className="font-bold">Venture</span>
           </span>
         </div>

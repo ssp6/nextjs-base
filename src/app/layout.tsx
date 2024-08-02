@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Mochiy_Pop_One } from 'next/font/google'
 import './globals.css'
-import { cnMerge } from '../styles/cnMerge'
+import { cn } from '../lib/utils'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 const mochiyPopOne = Mochiy_Pop_One({
@@ -23,7 +23,7 @@ const RootLayout = ({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={cnMerge(
+        className={cn(
           `min-h-screen bg-background font-sans antialiased ${inter.variable} ${mochiyPopOne.variable}`,
         )}
       >
