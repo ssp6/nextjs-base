@@ -7,13 +7,14 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "lint:staged": "next lint --fix --file",
     "types": "tsc --noEmit",
     "postinstall": "husky"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
-      "yarn lint",
-      "yarn types"
+      "yarn lint:staged",
+      "scripts/tsc-lint.sh"
     ]
   },
   "dependencies": {
