@@ -17,13 +17,13 @@ export const Nav = () => {
           </span>
         </div>
         <div className="flex space-x-4">
-          <Link href="/packages" className={linkClasses}>
+          <Link href="/#" className={linkClasses}>
             Packages
           </Link>
-          <Link href="/blog" className={linkClasses}>
+          <Link href="/#" className={linkClasses}>
             Blog
           </Link>
-          <Link href="/contact" className={linkClasses}>
+          <Link href="/#" className={linkClasses}>
             Contact
           </Link>
         </div>

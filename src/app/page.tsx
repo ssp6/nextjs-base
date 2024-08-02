@@ -32,11 +32,11 @@ const Home = () => {
           <div className={'relative'}>
             <h1 className="text-xl md:text-3xl font-bold text-left text-white">
               EXPLORE THE WORLD <br />
-              <span className="text-3xl md:text-8xl text-[#DAFAFD]">
+              <span className="text-5xl md:text-8xl text-[#DAFAFD]">
                 SUSTAINABLY
               </span>
             </h1>
-            <span className="font-bold text-left text-3xl md:text-8xl text-[#DAFAFD] opacity-10 transform -scale-y-100 absolute sr-hidden">
+            <span className="font-bold text-left text-5xl md:text-8xl text-[#DAFAFD] opacity-10 transform -scale-y-100 absolute sr-hidden">
               <span className={'relative top-3'}>SUSTAINABLY</span>
             </span>
           </div>
