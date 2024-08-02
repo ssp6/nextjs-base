@@ -9,7 +9,8 @@
     "lint": "next lint",
     "lint:staged": "next lint --fix --file",
     "types": "tsc --noEmit",
-    "postinstall": "husky"
+    "postinstall": "husky",
+    "commitlint": "commitlint --edit"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
@@ -23,6 +24,8 @@
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
     "@types/eslint": "^8.56.10",
     "@types/node": "^20",
     "@types/react": "^18",
