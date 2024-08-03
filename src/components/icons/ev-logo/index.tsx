@@ -1,11 +1,6 @@
 import React, { type SVGProps } from 'react'
 
-interface EvLogoProps extends SVGProps<SVGSVGElement> {
-  color?: string
-}
-
-export const EvLogo: React.FC<EvLogoProps> = ({
-  color = 'white',
+export const EvLogo: React.FC<SVGProps<SVGSVGElement>> = ({
   width = 48,
   height = 44,
   ...props
@@ -15,7 +10,7 @@ export const EvLogo: React.FC<EvLogoProps> = ({
       width={width}
       height={height}
       viewBox="0 0 48 44"
-      fill="none"
+      fill="white"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >

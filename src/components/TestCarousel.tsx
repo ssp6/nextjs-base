@@ -2,6 +2,7 @@ import * as React from 'react'
 
 import {
   Carousel,
+  CarouselButtons,
   CarouselContent,
   CarouselItem,
 } from '@/components/ui/carousel'
@@ -52,6 +53,7 @@ export const CarouselSpacing = () => {
           </CarouselItem>
         ))}
       </CarouselContent>
+      <CarouselButtons numberOfSlides={testimonials.length} />
     </Carousel>
   )
 }

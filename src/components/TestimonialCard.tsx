@@ -16,7 +16,7 @@ type Props = {
 
 export const TestimonialCard: FC<Props> = ({ testimonial }) => {
   return (
-    <div className="bg-white rounded-2xl shadow-md flex flex-row w-full">
+    <div className="bg-white rounded-2xl shadow-md flex flex-row">
       <div className={'flex flex-col p-5'}>
         <div className={'mb-4 flex flex-row gap-x-3 items-center'}>
           <Comments className={'w-8 h-8'} fill={testimonial.color} />
@@ -27,16 +27,16 @@ export const TestimonialCard: FC<Props> = ({ testimonial }) => {
             }}
           />
         </div>
-        <p className="text-slate-500 mb-8">{testimonial.text}</p>
+        <p className={'text-slate-500 mb-8'}>{testimonial.text}</p>
         <div className={'flex flex-row items-center gap-x-2'}>
           <Image
             src={testimonial.image}
             alt={testimonial.name}
             width={64}
             height={64}
-            className="object-cover rounded-full w-16 h-16"
+            className={'object-cover rounded-full w-12 md:w-16 h-12 md:h-16'}
           />
-          <div className={'flex flex-col'}>
+          <div className={'flex flex-col w-full min-w-0 break-words'}>
             <p className={'font-semibold'}>{testimonial.name}</p>
             <p className={'text-slate-500'}>{testimonial.title}</p>
           </div>
@@ -48,7 +48,7 @@ export const TestimonialCard: FC<Props> = ({ testimonial }) => {
           alt={testimonial.name}
           width={200}
           height={600}
-          className="w-full h-full object-cover rounded-r-2xl"
+          className={'w-full h-full object-cover rounded-r-2xl'}
         />
       </div>
     </div>

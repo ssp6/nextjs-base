@@ -21,7 +21,7 @@ const Home = () => {
             container,
           )}
         >
-          <div className={'relative'}>
+          <div className={'relative break-words'}>
             <h1 className="text-xl md:text-3xl font-bold text-left text-white">
               EXPLORE THE WORLD <br />
               <span className="text-5xl md:text-8xl text-[#DAFAFD]">

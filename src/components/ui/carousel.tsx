@@ -28,6 +28,8 @@ type CarouselContextProps = {
   scrollNext: () => void
   canScrollPrev: boolean
   canScrollNext: boolean
+  scrollToIndex: (index: number) => void
+  currentSlide: number
 } & CarouselProps
 
 const CarouselContext = React.createContext<CarouselContextProps | null>(null)
@@ -85,6 +87,10 @@ const Carousel = React.forwardRef<
       api?.scrollNext()
     }, [api])
 
+    const scrollToIndex = (index: number) => {
+      api?.scrollTo(index)
+    }
+
     const handleKeyDown = React.useCallback(
       (event: React.KeyboardEvent<HTMLDivElement>) => {
         if (event.key === 'ArrowLeft') {
@@ -132,6 +138,8 @@ const Carousel = React.forwardRef<
           scrollNext,
           canScrollPrev,
           canScrollNext,
+          scrollToIndex,
+          currentSlide: api?.selectedScrollSnap() ?? 0,
         }}
       >
         <div
@@ -252,24 +260,44 @@ const CarouselNext = React.forwardRef<
 })
 CarouselNext.displayName = 'CarouselNext'
 
+type CarouselButtonProps = {
+  numberOfSlides: number
+}
+
 const CarouselButtons = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => {
-  const { orientation } = useCarousel()
+  React.HTMLAttributes<HTMLDivElement> & CarouselButtonProps
+>(({ className, numberOfSlides, ...props }, ref) => {
+  const { orientation, scrollToIndex, currentSlide } = useCarousel()
 
   return (
     <div
       ref={ref}
-      role="group"
-      aria-roledescription="slide"
       className={cn(
-        'min-w-0 shrink-0 grow-0 basis-full',
+        'w-full flex flex-row justify-center gap-2 mt-4',
         orientation === 'horizontal' ? 'pl-4' : 'pt-4',
         className,
       )}
       {...props}
-    />
+    >
+      {Array.from({ length: numberOfSlides }).map((_, index) => (
+        <button
+          className={cn(
+            'h-[16px] w-[56px] rounded-full bg-zinc-300',
+            // Current selected is dark
+            currentSlide === index && 'bg-zinc-800',
+            // Hide the last slide on large screen as have 2 and can't scroll to last
+            index === numberOfSlides - 1 && 'md:hidden',
+            // If select last on mobile then move back to large then none are selected... so display the last button as if it is selected
+            currentSlide === numberOfSlides - 1 &&
+              index === numberOfSlides - 2 &&
+              'md:bg-zinc-800',
+          )}
+          key={index}
+          onClick={() => scrollToIndex(index)}
+        />
+      ))}
+    </div>
   )
 })
 CarouselButtons.displayName = 'CarouselButtons'
@@ -281,4 +309,5 @@ export {
   CarouselItem,
   CarouselPrevious,
   CarouselNext,
+  CarouselButtons,
 }
