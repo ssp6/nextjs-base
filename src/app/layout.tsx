@@ -24,7 +24,7 @@ const RootLayout = ({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          `min-h-screen bg-background font-sans antialiased ${inter.variable} ${mochiyPopOne.variable}`,
+          `min-h-screen bg-background font-sans antialiased ${inter.variable} ${mochiyPopOne.variable} h-full overscroll-y-none`,
         )}
       >
         {children}

@@ -4,11 +4,7 @@
 
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-
-.hero-clip-path {
-  clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+    .text-balance {
+        text-wrap: balance;
+    }
 }

@@ -1,31 +1,23 @@
 import { Nav } from '@/components/Nav'
 import { TourCard } from '@/components/TourCard'
+import { HeroImage } from '../components/HeroImage'
 import { CarouselSpacing } from '../components/TestCarousel'
 import { container } from '../styles'
 import { cn } from '../lib/utils'
-import Image from 'next/image'
 import Footer from '../components/Footer'
 import { HandHeart } from '../components/icons/hand-heart'
 import { Map } from '../components/icons/map'
 
 const Home = () => {
   return (
-    <div className="relative h-screen">
-      <Image
-        src="/hero-image.webp"
-        alt="Hero Image"
-        fill
-        quality={100}
-        className="absolute inset-0 z-0 hero-clip-path object-cover"
-      />
-      {/* Image overlay for color change */}
-      <div className="absolute inset-0 bg-[rgb(5_6_21)] bg-opacity-70 hero-clip-path z-[1] pointer-events-none"></div>
+    <div>
+      <HeroImage />
       <Nav />
       <main className="z-10 relative">
-        {/* Hero Section */}
+        {/* Hero Section Text */}
         <section
           className={cn(
-            'relative md:pt-32 pt-10 text-white min-h-screen',
+            'relative md:pt-32 pt-24 text-white min-h-screen',
             container,
           )}
         >
@@ -54,7 +46,7 @@ const Home = () => {
         {/* Tour Package */}
         <section
           className={cn(
-            'flex flex-col items-center justify-center pt-10 pb-32',
+            'flex flex-col items-center justify-center pt-0 md:pt-10 pb-32',
             container,
           )}
         >
@@ -93,7 +85,7 @@ const Home = () => {
           </div>
         </section>
         {/* Why Chose Us */}
-        <section className={'bg-[#F3FAFC] py-36'}>
+        <section className={'bg-[#F3FAFC] py-24 md:py-36'}>
           <div className={container}>
             <h2 className="text-3xl font-bold text-black text-center font-header">
               Why Chose Us
@@ -143,7 +135,7 @@ const Home = () => {
             </div>
           </div>
         </section>
-        <section className={'bg-[#FAFFFF] w-full py-36'}>
+        <section className={'bg-[#FAFFFF] w-full py-24 md:py-36'}>
           <div
             className={cn(
               'flex flex-col items-center justify-center',
