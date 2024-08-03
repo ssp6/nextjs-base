@@ -6,7 +6,8 @@ type Testimonial = {
   text: string
   name: string
   title: string
-  image: string
+  profileImage: string
+  locationImage: string
   color: string
 }
 
@@ -16,7 +17,7 @@ type Props = {
 
 export const TestimonialCard: FC<Props> = ({ testimonial }) => {
   return (
-    <div className="bg-white rounded-2xl shadow-md flex flex-row">
+    <div className="bg-white rounded-2xl shadow-md flex flex-row h-full">
       <div className={'flex flex-col p-5'}>
         <div className={'mb-4 flex flex-row gap-x-3 items-center'}>
           <Comments className={'w-8 h-8'} fill={testimonial.color} />
@@ -27,14 +28,16 @@ export const TestimonialCard: FC<Props> = ({ testimonial }) => {
             }}
           />
         </div>
-        <p className={'text-slate-500 mb-8'}>{testimonial.text}</p>
+        <p className={'text-slate-500 mb-8 flex-1'}>{testimonial.text}</p>
         <div className={'flex flex-row items-center gap-x-2'}>
           <Image
-            src={testimonial.image}
+            src={testimonial.profileImage}
             alt={testimonial.name}
             width={64}
             height={64}
-            className={'object-cover rounded-full w-12 md:w-16 h-12 md:h-16'}
+            className={
+              'object-cover rounded-full w-12 min-w-12 md:w-16 md:min-w-16 h-12 min-h-12 md:h-16 md:min-h-16'
+            }
           />
           <div className={'flex flex-col w-full min-w-0 break-words'}>
             <p className={'font-semibold'}>{testimonial.name}</p>
@@ -44,7 +47,7 @@ export const TestimonialCard: FC<Props> = ({ testimonial }) => {
       </div>
       <div className={'self-stretch min-w-[150px] md:min-w-[200px]'}>
         <Image
-          src={testimonial.image}
+          src={testimonial.locationImage}
           alt={testimonial.name}
           width={200}
           height={600}

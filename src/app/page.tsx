@@ -1,7 +1,7 @@
 import { Nav } from '@/components/Nav'
 import { TourCard } from '@/components/TourCard'
 import { HeroImage } from '../components/HeroImage'
-import { CarouselSpacing } from '../components/TestCarousel'
+import { WhatTravellersSay } from '../components/WhatTravellersSay'
 import { container } from '../styles'
 import { cn } from '../lib/utils'
 import Footer from '../components/Footer'
@@ -149,7 +149,7 @@ const Home = () => {
               Read testimonials from our travellers who have experienced the
               magic and impact of our eco-tours
             </p>
-            <CarouselSpacing />
+            <WhatTravellersSay />
           </div>
         </section>
       </main>
