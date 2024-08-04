@@ -53,7 +53,7 @@ const Home = () => {
           <h2 className="text-3xl font-bold text-black text-center font-header">
             Tour Packages
           </h2>
-          <p className="text-center text-gray-400 mt-5 max-w-xl">
+          <p className="text-center text-gray-500 mt-5 max-w-xl">
             Discover our diverse range of eco-friendly adventures across the
             world crafted for the environmentally conscious traveller
           </p>
@@ -145,7 +145,7 @@ const Home = () => {
             <h2 className="text-3xl font-bold text-black text-center font-header">
               What Our Travellers Say
             </h2>
-            <p className="text-center text-gray-400 mt-5 max-w-xl mb-14">
+            <p className="text-center text-gray-500 mt-5 max-w-xl mb-14">
               Read testimonials from our travellers who have experienced the
               magic and impact of our eco-tours
             </p>

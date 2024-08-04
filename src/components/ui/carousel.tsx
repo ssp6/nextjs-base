@@ -297,6 +297,7 @@ const CarouselButtons = React.forwardRef<
           )}
           key={index}
           onClick={() => scrollToIndex(index)}
+          aria-label={`Scroll to slide ${index + 1}`}
         />
       ))}
     </div>
