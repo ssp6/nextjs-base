@@ -45,12 +45,12 @@ export const TestimonialCard: FC<Props> = ({ testimonial }) => {
           </div>
         </div>
       </div>
-      <div className={'self-stretch min-w-[150px] md:min-w-[200px]'}>
+      <div className={'min-w-[150px] md:min-w-[200px]'}>
         <Image
           src={testimonial.locationImage}
           alt={testimonial.name}
           width={200}
-          height={600}
+          height={400}
           className={'w-full h-full object-cover rounded-r-2xl'}
         />
       </div>

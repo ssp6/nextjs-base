@@ -59,25 +59,25 @@ const Home = () => {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-14">
             <TourCard
-              imageUrl="/images/indonesia.png"
+              imageUrl="/images/indonesia.webp"
               location="INDONESIA"
               price="$3,500"
               duration="6 Weeks"
             />
             <TourCard
-              imageUrl="/images/australia.png"
+              imageUrl="/images/australia.webp"
               location="AUSTRALIA"
               price="$2,200"
               duration="2 Weeks"
             />
             <TourCard
-              imageUrl="/images/scotland.png"
+              imageUrl="/images/scotland.webp"
               location="SCOTLAND"
               price="$2,200"
               duration="2 Weeks"
             />
             <TourCard
-              imageUrl="/images/croatia.png"
+              imageUrl="/images/croatia.webp"
               location="CROATIA"
               price="$2,800"
               duration="3 Weeks"
