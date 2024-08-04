@@ -19,7 +19,7 @@ export const TourCard: FC<Props> = ({
       <Image
         src={imageUrl}
         alt={`${location} image`}
-        width={500}
+        width={288}
         height={400}
         className="w-full h-[400px] object-cover"
       />
